@@ -46,7 +46,7 @@ export default function Footer() {
           {/* Copyright Section */}
           <div className="text-center text-sm text-gray-700">
             <span className="block">
-              © 2023{" "}
+              © 2025{" "}
               <a href="#" className="text-gray-900 hover:underline font-medium">
                 LIMS™
               </a>
