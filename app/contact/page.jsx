@@ -56,10 +56,10 @@ export default function page() {
   };
 
   return (
-    <div className="w-full mx-auto px-20 py-16  bg-blue-50  ">
+    <div className="w-full mx-auto px-6 sm:px-20 py-16  bg-blue-50  ">
       <div className="text-center mb-12">
         <h2 className="text-lg font-semibold text-blue-600 mb-2">GET IN TOUCH</h2>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
           Contact <span className="text-blue-600">Our Experts</span>
         </h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
