@@ -120,10 +120,11 @@ export default function Home() {
               </li>
               
               {/* Main dropdown */}
+              <div className="hidden">
               <li ref={mainDropdownRef}>
                 <button
                   onClick={() => setIsMainDropdownOpen(!isMainDropdownOpen)}
-                  className="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
+                  className="hidden flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
                 >
                   Resources
                   <svg
@@ -229,6 +230,7 @@ export default function Home() {
                   </div>
                 </div>
               </li>
+              </div>
 
               {/* Regular nav items */}
               <li>
@@ -237,9 +239,9 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
+                <Link href="/pricing" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/contact" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
