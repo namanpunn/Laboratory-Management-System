@@ -2,6 +2,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
@@ -41,57 +49,69 @@ export default function Home() {
 
   return (
     <div>
-      <nav className="bg-white border-gray-200 ">
+      <nav className="bg-white border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          {/* Logo */}
           <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
               src="images/logo.png"
-              className="h-10 "
+              className="h-10"
               alt="Logo"
             />
-            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-              HyperNauts
-            </span> */}
           </a>
           
           {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
-            aria-controls="navbar-multi-level"
-            aria-expanded={isMobileMenuOpen}
-          >
-            <span className="sr-only">Toggle menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
+          <div className="flex items-center md:order-2">
+            {/* Auth buttons */}
+            <div className="flex items-center space-x-3">
+              <SignedOut>
+                <SignInButton className="text-gray-900 hover:text-blue-700" />
+                <SignUpButton className="ml-3 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800" />
+              </SignedOut>
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+            </div>
+            
+            {/* Mobile menu toggle */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              type="button"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ml-2"
+              aria-controls="navbar-multi-level"
+              aria-expanded={isMobileMenuOpen}
             >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
+              <span className="sr-only">Toggle menu</span>
+              <svg
+                className="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
 
           {/* Navigation menu */}
           <div
             className={`${
               isMobileMenuOpen ? 'block' : 'hidden'
-            } w-full md:block md:w-auto`}
+            } w-full md:block md:w-auto md:order-1`}
             id="navbar-multi-level"
           >
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 mr-5 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 "
+                  className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0"
                   aria-current="page"
                 >
                   Home
@@ -102,7 +122,7 @@ export default function Home() {
               <li ref={mainDropdownRef}>
                 <button
                   onClick={() => setIsMainDropdownOpen(!isMainDropdownOpen)}
-                  className="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto  focus:text-white "
+                  className="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
                 >
                   Resources
                   <svg
@@ -126,13 +146,13 @@ export default function Home() {
                 <div
                   className={`${
                     isMainDropdownOpen ? 'block' : 'hidden'
-                  } absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 `}
+                  } absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44`}
                 >
-                  <ul className="py-2 text-sm text-gray-700 ">
+                  <ul className="py-2 text-sm text-gray-700">
                     <li>
                       <a
                         href="#"
-                        className="block px-4 py-2 hover:bg-gray-100  hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-100 hover:text-blue-700"
                       >
                         Dashboard
                       </a>
@@ -145,7 +165,7 @@ export default function Home() {
                           e.stopPropagation();
                           setIsDoubleDropdownOpen(!isDoubleDropdownOpen);
                         }}
-                        className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100  hover:text-white"
+                        className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 hover:text-blue-700"
                       >
                         Dropdown
                         <svg
@@ -169,26 +189,26 @@ export default function Home() {
                       <div
                         className={`${
                           isDoubleDropdownOpen ? 'block' : 'hidden'
-                        } absolute left-full top-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 `}
+                        } absolute left-full top-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44`}
                       >
-                        <ul className="py-2 text-sm text-gray-700 ">
+                        <ul className="py-2 text-sm text-gray-700">
                           <li>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100  text-gray-200 hover:text-white">
+                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-gray-700 hover:text-blue-700">
                               Overview
                             </a>
                           </li>
                           <li>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100  text-gray-200 hover:text-white">
+                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-gray-700 hover:text-blue-700">
                               My downloads
                             </a>
                           </li>
                           <li>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100  text-gray-200 hover:text-white">
+                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-gray-700 hover:text-blue-700">
                               Billing
                             </a>
                           </li>
                           <li>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100  text-gray-200 hover:text-white">
+                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-gray-700 hover:text-blue-700">
                               Rewards
                             </a>
                           </li>
@@ -196,13 +216,13 @@ export default function Home() {
                       </div>
                     </li>
                     <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100  hover:text-white">
+                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-blue-700">
                         Earnings
                       </a>
                     </li>
                   </ul>
                   <div className="py-1">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100  hover:text-white">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-700">
                       Sign out
                     </a>
                   </div>
@@ -211,17 +231,17 @@ export default function Home() {
 
               {/* Regular nav items */}
               <li>
-                <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   hover:text-white ">
+                <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-white ">
+                <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                   Pricing
                 </a>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   hover:text-white ">
+                <a href="#" className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                   Contact
                 </a>
               </li>
