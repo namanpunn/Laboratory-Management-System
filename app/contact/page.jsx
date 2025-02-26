@@ -71,7 +71,7 @@ export default function page() {
         {/* Left Column - Info Cards */}
         <div className="w-full lg:w-1/2 flex flex-col">
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 transform transition-transform hover:scale-[1.02] border border-gray-100">
-            <h3 className="text-xl font-bold mb-6 flex items-center">
+            <h3 className="text-xl font-bold mb-6 flex items-center text-black">
               <span className="bg-blue-100 text-blue-600 p-3 rounded-lg mr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -88,7 +88,7 @@ export default function page() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h4 className="ml-3 font-semibold">Technical Support</h4>
+                  <h4 className="ml-3 font-semibold text-black">Technical Support</h4>
                 </div>
                 <p className="text-gray-600 text-sm pl-11">Get help with system setup and troubleshooting</p>
               </div>
@@ -100,7 +100,7 @@ export default function page() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   </div>
-                  <h4 className="ml-3 font-semibold">Sales Inquiries</h4>
+                  <h4 className="ml-3 font-semibold text-black">Sales Inquiries</h4>
                 </div>
                 <p className="text-gray-600 text-sm pl-11">Learn about pricing and system capabilities</p>
               </div>
@@ -112,7 +112,7 @@ export default function page() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
-                  <h4 className="ml-3 font-semibold">Partnership</h4>
+                  <h4 className="ml-3 font-semibold text-black">Partnership</h4>
                 </div>
                 <p className="text-gray-600 text-sm pl-11">Explore integration and partnership opportunities</p>
               </div>
@@ -124,7 +124,7 @@ export default function page() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
-                  <h4 className="ml-3 font-semibold">Documentation</h4>
+                  <h4 className="ml-3 font-semibold text-black">Documentation</h4>
                 </div>
                 <p className="text-gray-600 text-sm pl-11">Access user guides and technical documentation</p>
               </div>
@@ -173,11 +173,11 @@ export default function page() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="ml-2 text-sm font-medium">24h Response Time</span>
+                <span className="ml-2 text-sm font-medium text-black">24h Response Time</span>
               </div>
             </div>
             
-            <h3 className="text-2xl font-bold mb-2">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold mb-2 text-black">Send Us a Message</h3>
             <p className="text-gray-600 mb-6">Fill out the form below and we'll get back to you promptly</p>
             
             {formStatus.submitted ? (
@@ -319,7 +319,7 @@ export default function page() {
               </svg>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-1">Call Us</h4>
+              <h4 className="text-lg font-semibold mb-1 text-black">Call Us</h4>
               <p className="text-gray-600 text-sm">Mon-Fri from 8am to 5pm</p>
               <a href="tel:+18005551234" className="text-blue-600 font-medium mt-1 block hover:underline">+1 (800) 555-1234</a>
             </div>
@@ -332,7 +332,7 @@ export default function page() {
               </svg>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-1">Email Us</h4>
+              <h4 className="text-lg font-semibold mb-1 text-black">Email Us</h4>
               <p className="text-gray-600 text-sm">We'll respond within 24 hours</p>
               <a href="mailto:support@lims-example.com" className="text-blue-600 font-medium mt-1 block hover:underline">support@lims-example.com</a>
             </div>
@@ -346,7 +346,7 @@ export default function page() {
               </svg>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-1">Visit Us</h4>
+              <h4 className="text-lg font-semibold mb-1 text-black">Visit Us</h4>
               <p className="text-gray-600 text-sm">Come to our headquarters</p>
               <address className="text-blue-600 font-medium mt-1 block not-italic hover:underline">1234 Innovation Drive<br/>San Francisco, CA 94107</address>
             </div>

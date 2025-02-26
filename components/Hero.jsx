@@ -239,7 +239,7 @@ export default function Hero() {
                   <Database className="w-3 h-3 md:w-4 md:h-4 text-blue-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm font-semibold">Real-time Analysis</p>
+                  <p className="text-xs md:text-sm font-semibold text-black">Real-time Analysis</p>
                   <p className="text-[10px] md:text-xs text-gray-500">Processing data</p>
                 </div>
               </div>
@@ -253,7 +253,7 @@ export default function Hero() {
                   <Microscope className="w-3 h-3 md:w-4 md:h-4 text-green-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm font-semibold">Sample Tracking</p>
+                  <p className="text-xs md:text-sm font-semibold text-black">Sample Tracking</p>
                   <p className="text-[10px] md:text-xs text-gray-500">100% Accurate</p>
                 </div>
               </div>
