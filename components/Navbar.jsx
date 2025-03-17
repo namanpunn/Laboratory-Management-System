@@ -9,6 +9,7 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
+  SignOutButton,
 } from '@clerk/nextjs'
 
 export default function Home() {
@@ -66,8 +67,15 @@ export default function Home() {
             {/* Auth buttons */}
             <div className="flex items-center space-x-3">
               <SignedOut>
-                <SignInButton className="text-gray-900 hover:text-blue-700" />
-                <SignUpButton className="ml-3 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800" />
+                {/* Optional: add redirectUrl prop if you want to control the landing page after sign in/up */}
+                <SignInButton 
+                  className="text-gray-900 hover:text-blue-700" 
+                  /* redirectUrl="/dashboard"  // Uncomment and modify if needed */
+                />
+                <SignUpButton 
+                  className="ml-3 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800" 
+                  /* redirectUrl="/dashboard"  // Uncomment and modify if needed */
+                />
               </SignedOut>
               <SignedIn>
                 <UserButton afterSignOutUrl="/" />
