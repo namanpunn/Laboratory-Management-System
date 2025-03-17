@@ -70,11 +70,11 @@ export default function Home() {
                 {/* Optional: add redirectUrl prop if you want to control the landing page after sign in/up */}
                 <SignInButton 
                   className="text-gray-900 hover:text-blue-700" 
-                  /* redirectUrl="/dashboard"  // Uncomment and modify if needed */
+                   redirectUrl="/dashboard"  // Uncomment and modify if needed 
                 />
                 <SignUpButton 
                   className="ml-3 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800" 
-                  /* redirectUrl="/dashboard"  // Uncomment and modify if needed */
+                   redirectUrl="/dashboard"  // Uncomment and modify if needed 
                 />
               </SignedOut>
               <SignedIn>
