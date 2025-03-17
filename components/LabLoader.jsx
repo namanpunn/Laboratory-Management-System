@@ -16,7 +16,7 @@ const LabLoader = () => {
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
-      <div className="w-96 flex flex-col items-center">
+      <div className="w-72 sm:w-96 flex flex-col items-center">
         {/* Main animation container */}
         <div className="relative w-64 h-64 mb-8 flex items-center justify-center">
           {/* Rotating outer circle */}
