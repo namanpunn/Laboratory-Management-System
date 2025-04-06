@@ -82,6 +82,9 @@ export default function Home() {
               <li>
                 <Link href="/contact" className={`block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 ${isActive('/contact')}`}>Contact</Link>
               </li>
+              <li>
+                <Link href="/dashboard" className={`block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 ${isActive('/contact')}`}>Dashboard</Link>
+              </li>
             </ul>
           </div>
         </div>

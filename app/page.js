@@ -19,13 +19,12 @@ export default function Home() {
 
   return (
     <div>
-      {loading && <LabLoader />}
-      {!loading && (
+      
         <>
           <Hero/>
           <ExploreSection/>
         </>
-      )}
+      
     </div>
   );
 }
