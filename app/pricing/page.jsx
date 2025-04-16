@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-
 export default function Page() {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
 
@@ -75,6 +74,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      
       <Head>
         <title>Pricing - Laboratory Information Management System</title>
         <meta name="description" content="Pricing plans for our Next-Gen Laboratory Information Management System" />
