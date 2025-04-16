@@ -5,7 +5,7 @@ import AddToolForm from "@/components/AddToolForm";
 import Image from "next/image";
 import { ChartBar, Search, Plus, Package, ArrowDown } from "lucide-react";
 import LabLoader from "@/components/LabLoader";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 export default function Page() {
   const router = useRouter();
   const [tools, setTools] = useState([]);
@@ -60,7 +60,7 @@ export default function Page() {
   const lowStockCount = lowStockItems.length;
   const averageQuantity =
     tools.length > 0 ? Math.round(totalQuantity / tools.length) : 0;
-    
+
   return (
     <div>
       {loading && <LabLoader />}
@@ -73,9 +73,14 @@ export default function Page() {
               </h1>
               <p className="text-gray-600">Admin Dashboard</p>
             </div>
-            <div className="ml-96 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 items-center justify-center">
-            <button onClick={() => router.push('/request')}>Requests</button>
-            </div>
+            <div className="absolute top-12 right-4">
+      <button
+        onClick={() => router.push('/request')}
+        className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-blue-700 rounded-lg shadow-md hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-200 ease-in-out dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Requests
+      </button>
+    </div>
           </div>
 
           {/* Stats Overview */}
