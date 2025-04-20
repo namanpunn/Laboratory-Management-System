@@ -187,7 +187,7 @@ export default function Page() {
                 </h1>
                 <p className="text-gray-600">Admin Dashboard</p>
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-col md:flex-row gap-2">
                 <button
                   onClick={() => router.push("/request")}
                   className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-blue-700 rounded-lg shadow-md hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-200 ease-in-out dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
