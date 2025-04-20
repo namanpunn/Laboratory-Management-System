@@ -246,7 +246,7 @@ export default function EquipmentRequestPage() {
                       </svg>
                     </div>
                     <div className="text-center text-sm font-medium">Low Priority</div>
-                    <div className="text-center text-xs text-gray-500 mt-1">Within 30 days</div>
+                    <div className="text-center text-xs text-gray-500 mt-1">Within 14 days</div>
                   </div>
                   <div 
                     className={`border rounded-md p-3 cursor-pointer transition-all ${formData.urgency === 'normal' ? 'bg-blue-50 border-blue-400 ring-2 ring-blue-200' : 'border-gray-200 hover:border-gray-300'}`}
@@ -258,7 +258,7 @@ export default function EquipmentRequestPage() {
                       </svg>
                     </div>
                     <div className="text-center text-sm font-medium">Normal</div>
-                    <div className="text-center text-xs text-gray-500 mt-1">Within 14 days</div>
+                    <div className="text-center text-xs text-gray-500 mt-1">Within 7 days</div>
                   </div>
                   <div 
                     className={`border rounded-md p-3 cursor-pointer transition-all ${formData.urgency === 'high' ? 'bg-blue-50 border-blue-400 ring-2 ring-blue-200' : 'border-gray-200 hover:border-gray-300'}`}
@@ -271,7 +271,7 @@ export default function EquipmentRequestPage() {
                       </svg>
                     </div>
                     <div className="text-center text-sm font-medium">Urgent</div>
-                    <div className="text-center text-xs text-gray-500 mt-1">Within 3 days</div>
+                    <div className="text-center text-xs text-gray-500 mt-1">Today</div>
                   </div>
                 </div>
               </div>
@@ -293,6 +293,7 @@ export default function EquipmentRequestPage() {
                 type="date"
                 name="requestDate"
                 value={formData.requestDate}
+                min={new Date().toISOString().split("T")[0]}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               />
