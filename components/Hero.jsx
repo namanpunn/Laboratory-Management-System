@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Database, Microscope, LineChart, ChevronRight, Play } from "lucide-react";
 import Image from "next/image";
-
+import Link from "next/link";
 // Styles remain the same
 const styles = `
 .animate-float {
@@ -182,6 +182,7 @@ export default function Hero() {
 
             {/* CTA section */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 md:pt-6">
+            <Link href="/services" passHref>
               <button 
                 className="group px-6 py-3 md:px-8 md:py-4 bg-blue-600 text-white rounded-xl 
                          text-sm md:text-base font-semibold transition-all duration-300 
@@ -197,6 +198,8 @@ export default function Hero() {
                                aria-hidden="true" />
                 </span>
               </button>
+              </Link>
+              <Link href="/services" passHref>
               <button 
                 className="group px-6 py-3 md:px-8 md:py-4 border-2 border-blue-600 
                          text-blue-600 rounded-xl text-sm md:text-base font-semibold 
@@ -210,6 +213,7 @@ export default function Hero() {
                   Watch Demo
                 </span>
               </button>
+              </Link>
             </div>
           </div>
 
