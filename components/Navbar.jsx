@@ -32,7 +32,13 @@ export default function Home() {
             {/* Auth buttons */}
             <div className="flex items-center space-x-3">
               <SignedOut>
-                <SignInButton className="text-gray-900 hover:text-blue-700" />
+                <SignInButton className="text-gray-900 hover:text-blue-700" 
+                path="/sign-in"
+                routing="path"
+                afterSignInUrl={process.env.NODE_ENV === "development" ? "/" : "/dashboard"}
+// 👈 Your desired redirect path
+                afterSignUpUrl="/dashboard"
+                />
                 <SignUpButton className="ml-3 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800" />
               </SignedOut>
               <SignedIn>

@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-      // point these at your new FORCE_REDIRECT_URL env‑vars:
+      navigate={(to) => router.push(to)}
       afterSignInUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL}
       afterSignUpUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL}
     >
