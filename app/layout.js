@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       afterSignInUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL}
       afterSignUpUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL}
     >
-      <html lang="en">
+     
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </body>
-      </html>
+     
     </ClerkProvider>
   );
 }
